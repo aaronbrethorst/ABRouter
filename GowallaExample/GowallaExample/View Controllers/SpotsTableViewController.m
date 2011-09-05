@@ -80,8 +80,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *dict = [self.tableData objectAtIndex:indexPath.row];
-    [[ABRouter sharedRouter] navigateTo:[dict objectForKey:@"activity_url"] withNavigationController:self.navigationController];
+    [[ABRouter sharedRouter] navigateTo:[[self.tableData objectAtIndex:indexPath.row] objectForKey:@"activity_url"]
+               withNavigationController:self.navigationController];
 }
 
 @end
