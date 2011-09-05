@@ -7,6 +7,7 @@
 //
 
 #import "SpotsTableViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation SpotsTableViewController
 @synthesize tableData;
@@ -33,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.rowHeight = 60;
     
     self.tableData = [[[NSMutableArray alloc] init] autorelease];
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:47.623318], @"lat", [NSNumber numberWithFloat:-122.312937], @"lng", [NSNumber numberWithInt:50], @"radius", nil];
@@ -72,6 +75,8 @@
     
     NSDictionary *spot = [self.tableData objectAtIndex:indexPath.row];
     cell.textLabel.text = [spot objectForKey:@"name"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[spot objectForKey:@"_image_url_50"]]
+                   placeholderImage:[UIImage imageNamed:@"empty_50.png"]];
     
     return cell;
 }
