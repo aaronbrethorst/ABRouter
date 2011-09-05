@@ -1,0 +1,3 @@
+[submodule "SOCKit"]
+	path = SOCKit
+	url = git://github.com/jverkoey/sockit.git
