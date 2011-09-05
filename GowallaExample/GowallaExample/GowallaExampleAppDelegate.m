@@ -7,6 +7,7 @@
 //
 
 #import "GowallaExampleAppDelegate.h"
+#import "SpotViewController.h"
 #import "SpotsTableViewController.h"
 #import "CheckinsTableViewController.h"
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[ABRouter sharedRouter] registerURLPattern:@"/spots/:spot_id" forViewControllerClass:[SpotViewController class]];
     [[ABRouter sharedRouter] registerURLPattern:@"/spots/:spot_id/events" forViewControllerClass:[CheckinsTableViewController class]];
     self.spotsTableViewController = [[[SpotsTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.spotsTableViewController] autorelease];

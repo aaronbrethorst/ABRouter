@@ -33,6 +33,8 @@
 		9305C06014147DB20052A06F /* SpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C05F14147DB20052A06F /* SpotsTableViewController.m */; };
 		9305C0631414804A0052A06F /* CheckinsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C0621414804A0052A06F /* CheckinsTableViewController.m */; };
 		93ADBB7C14155F6000553E08 /* empty_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 93ADBB7B14155F6000553E08 /* empty_50.png */; };
+		93ADBB811415622C00553E08 /* SpotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ADBB7F1415622C00553E08 /* SpotViewController.m */; };
+		93ADBB821415622C00553E08 /* SpotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93ADBB801415622C00553E08 /* SpotViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,9 @@
 		9305C0611414804A0052A06F /* CheckinsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinsTableViewController.h; sourceTree = "<group>"; };
 		9305C0621414804A0052A06F /* CheckinsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinsTableViewController.m; sourceTree = "<group>"; };
 		93ADBB7B14155F6000553E08 /* empty_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_50.png; sourceTree = "<group>"; };
+		93ADBB7E1415622C00553E08 /* SpotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotViewController.h; sourceTree = "<group>"; };
+		93ADBB7F1415622C00553E08 /* SpotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotViewController.m; sourceTree = "<group>"; };
+		93ADBB801415622C00553E08 /* SpotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +236,9 @@
 				9305C05F14147DB20052A06F /* SpotsTableViewController.m */,
 				9305C0611414804A0052A06F /* CheckinsTableViewController.h */,
 				9305C0621414804A0052A06F /* CheckinsTableViewController.m */,
+				93ADBB7E1415622C00553E08 /* SpotViewController.h */,
+				93ADBB7F1415622C00553E08 /* SpotViewController.m */,
+				93ADBB801415622C00553E08 /* SpotViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -296,6 +304,7 @@
 				9305BFDA141478F80052A06F /* InfoPlist.strings in Resources */,
 				9305BFE3141478F80052A06F /* MainWindow.xib in Resources */,
 				93ADBB7C14155F6000553E08 /* empty_50.png in Resources */,
+				93ADBB821415622C00553E08 /* SpotViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +334,7 @@
 				9305C05714147AD50052A06F /* JSONKit.m in Sources */,
 				9305C06014147DB20052A06F /* SpotsTableViewController.m in Sources */,
 				9305C0631414804A0052A06F /* CheckinsTableViewController.m in Sources */,
+				93ADBB811415622C00553E08 /* SpotViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

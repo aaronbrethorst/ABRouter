@@ -38,10 +38,10 @@
     self.tableView.rowHeight = 60;
     
     self.tableData = [[[NSMutableArray alloc] init] autorelease];
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:47.623318], @"lat", [NSNumber numberWithFloat:-122.312937], @"lng", [NSNumber numberWithInt:50], @"radius", nil];
     
-    [[AFGowallaAPIClient sharedClient] getPath:@"/spots" parameters:params success:^(id response) {
-        [self.tableData removeAllObjects];
+    [[AFGowallaAPIClient sharedClient] getPath:@"/spots"
+                                    parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:47.623318], @"lat", [NSNumber numberWithFloat:-122.312937], @"lng", [NSNumber numberWithInt:50], @"radius", nil]
+                                       success:^(id response) {
         [self.tableData addObjectsFromArray:[response objectForKey:@"spots"]];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -85,7 +85,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[ABRouter sharedRouter] navigateTo:[[self.tableData objectAtIndex:indexPath.row] objectForKey:@"activity_url"]
+    [[ABRouter sharedRouter] navigateTo:[[self.tableData objectAtIndex:indexPath.row] objectForKey:@"url"]
                withNavigationController:self.navigationController];
 }
 
