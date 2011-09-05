@@ -9,22 +9,17 @@
 #import "AlbumListViewController.h"
 
 @implementation AlbumListViewController
+@synthesize apiPath;
+@synthesize pathLabel;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithNibName:@"AlbumListViewController" bundle:nil];
+    if (self)
+    {
+        self.title = NSStringFromClass([self class]);
     }
     return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -32,20 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.pathLabel.text = [NSString stringWithFormat:@"Welcome to %@", self.apiPath];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
+#pragma mark - IBActions
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (IBAction)showAlbum:(id)sender
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    int tag = [sender tag];
+    
+    [[ABRouter sharedRouter] navigateTo:[NSString stringWithFormat:@"/albums/%d", tag] withNavigationController:self.navigationController];
 }
 
 @end

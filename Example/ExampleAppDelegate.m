@@ -7,14 +7,28 @@
 //
 
 #import "ExampleAppDelegate.h"
+#import "RootViewController.h"
+#import "PhotoListViewController.h"
+#import "PhotoViewController.h"
+#import "AlbumListViewController.h"
+#import "PhotoListViewController.h"
 
 @implementation ExampleAppDelegate
 
 @synthesize window = _window;
+@synthesize rootViewController, navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[ABRouter sharedRouter] registerURLPattern:@"/photos" forViewControllerClass:[PhotoListViewController class]];
+    [[ABRouter sharedRouter] registerURLPattern:@"/photos/:id" forViewControllerClass:[PhotoViewController class]];
+    [[ABRouter sharedRouter] registerURLPattern:@"/albums" forViewControllerClass:[AlbumListViewController class]];
+    [[ABRouter sharedRouter] registerURLPattern:@"/albums/:id" forViewControllerClass:[PhotoListViewController class]];
+    [[ABRouter sharedRouter] registerURLPattern:@"/albums/:album_id/photos/:id" forViewControllerClass:[PhotoViewController class]];
+    
+    self.rootViewController = [[[RootViewController alloc] init] autorelease];
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.rootViewController] autorelease];
+    [self.window addSubview:self.navigationController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

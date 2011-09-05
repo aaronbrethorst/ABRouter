@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class RootViewController;
+
 @interface ExampleAppDelegate : NSObject <UIApplicationDelegate>
-
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-
+@property(nonatomic,retain) IBOutlet UIWindow *window;
+@property(nonatomic,retain) RootViewController *rootViewController;
+@property(nonatomic,retain) UINavigationController *navigationController;
 @end

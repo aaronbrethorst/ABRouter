@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoListViewController : UIViewController
-
+@interface PhotoListViewController : UIViewController <Routable>
+@property(nonatomic,retain) IBOutlet UILabel *pathLabel;
+- (IBAction)showPhoto:(id)sender;
 @end

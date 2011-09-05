@@ -10,42 +10,26 @@
 
 @implementation RootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self = [super initWithNibName:@"RootViewController" bundle:nil];
+    if (self)
+    {
+        self.title = NSStringFromClass([self class]);
     }
     return self;
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - IBActions
+
+- (IBAction)viewAlbums:(id)sender
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+    [[ABRouter sharedRouter] navigateTo:@"/albums" withNavigationController:self.navigationController];
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
+- (IBAction)viewPhotos:(id)sender
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [[ABRouter sharedRouter] navigateTo:@"/photos" withNavigationController:self.navigationController];
 }
 
 @end

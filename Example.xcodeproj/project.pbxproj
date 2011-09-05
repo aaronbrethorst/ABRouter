@@ -14,6 +14,16 @@
 		9305BF8A1414568D0052A06F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BF891414568D0052A06F /* main.m */; };
 		9305BF8E1414568D0052A06F /* ExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BF8D1414568D0052A06F /* ExampleAppDelegate.m */; };
 		9305BF911414568D0052A06F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9305BF8F1414568D0052A06F /* MainWindow.xib */; };
+		9305BF9E141456A70052A06F /* ABRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BF9D141456A70052A06F /* ABRouter.m */; };
+		9305BFA3141456DF0052A06F /* SOCKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFA2141456DF0052A06F /* SOCKit.m */; };
+		9305BFA8141459370052A06F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFA6141459370052A06F /* RootViewController.m */; };
+		9305BFA9141459370052A06F /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9305BFA7141459370052A06F /* RootViewController.xib */; };
+		9305BFAD1414594C0052A06F /* PhotoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFAB1414594C0052A06F /* PhotoListViewController.m */; };
+		9305BFAE1414594C0052A06F /* PhotoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9305BFAC1414594C0052A06F /* PhotoListViewController.xib */; };
+		9305BFB2141459580052A06F /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFB0141459580052A06F /* PhotoViewController.m */; };
+		9305BFB3141459580052A06F /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9305BFB1141459580052A06F /* PhotoViewController.xib */; };
+		9305BFB7141459690052A06F /* AlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFB5141459690052A06F /* AlbumListViewController.m */; };
+		9305BFB8141459690052A06F /* AlbumListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9305BFB6141459690052A06F /* AlbumListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +31,29 @@
 		9305BF7D1414568D0052A06F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9305BF7F1414568D0052A06F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9305BF811414568D0052A06F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9305BF851414568D0052A06F /* Example-Info.plist */ = {isa = PBXFileReference; path = "Example-Info.plist"; sourceTree = "<group>"; };
+		9305BF851414568D0052A06F /* Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Example-Info.plist"; sourceTree = "<group>"; };
 		9305BF871414568D0052A06F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9305BF891414568D0052A06F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9305BF8B1414568D0052A06F /* Example-Prefix.pch */ = {isa = PBXFileReference; path = "Example-Prefix.pch"; sourceTree = "<group>"; };
-		9305BF8C1414568D0052A06F /* ExampleAppDelegate.h */ = {isa = PBXFileReference; path = ExampleAppDelegate.h; sourceTree = "<group>"; };
+		9305BF8B1414568D0052A06F /* Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Prefix.pch"; sourceTree = "<group>"; };
+		9305BF8C1414568D0052A06F /* ExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleAppDelegate.h; sourceTree = "<group>"; };
 		9305BF8D1414568D0052A06F /* ExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleAppDelegate.m; sourceTree = "<group>"; };
 		9305BF901414568D0052A06F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		9305BF9C141456A70052A06F /* ABRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRouter.h; sourceTree = "<group>"; };
+		9305BF9D141456A70052A06F /* ABRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRouter.m; sourceTree = "<group>"; };
+		9305BFA1141456DF0052A06F /* SOCKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOCKit.h; path = SOCKit/SOCKit.h; sourceTree = "<group>"; };
+		9305BFA2141456DF0052A06F /* SOCKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOCKit.m; path = SOCKit/SOCKit.m; sourceTree = "<group>"; };
+		9305BFA5141459370052A06F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		9305BFA6141459370052A06F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		9305BFA7141459370052A06F /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		9305BFAA1414594C0052A06F /* PhotoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoListViewController.h; sourceTree = "<group>"; };
+		9305BFAB1414594C0052A06F /* PhotoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoListViewController.m; sourceTree = "<group>"; };
+		9305BFAC1414594C0052A06F /* PhotoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoListViewController.xib; sourceTree = "<group>"; };
+		9305BFAF141459580052A06F /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		9305BFB0141459580052A06F /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		9305BFB1141459580052A06F /* PhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
+		9305BFB4141459690052A06F /* AlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumListViewController.h; sourceTree = "<group>"; };
+		9305BFB5141459690052A06F /* AlbumListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumListViewController.m; sourceTree = "<group>"; };
+		9305BFB6141459690052A06F /* AlbumListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +73,8 @@
 		9305BF6E1414568D0052A06F = {
 			isa = PBXGroup;
 			children = (
+				9305BFA0141456D60052A06F /* SOCKit */,
+				9305BF9B141456A70052A06F /* ABRouter */,
 				9305BF831414568D0052A06F /* Example */,
 				9305BF7C1414568D0052A06F /* Frameworks */,
 				9305BF7A1414568D0052A06F /* Products */,
@@ -74,6 +102,7 @@
 		9305BF831414568D0052A06F /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				9305BFA4141459200052A06F /* View Controllers */,
 				9305BF8C1414568D0052A06F /* ExampleAppDelegate.h */,
 				9305BF8D1414568D0052A06F /* ExampleAppDelegate.m */,
 				9305BF8F1414568D0052A06F /* MainWindow.xib */,
@@ -91,6 +120,43 @@
 				9305BF8B1414568D0052A06F /* Example-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9305BF9B141456A70052A06F /* ABRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9305BF9C141456A70052A06F /* ABRouter.h */,
+				9305BF9D141456A70052A06F /* ABRouter.m */,
+			);
+			path = ABRouter;
+			sourceTree = "<group>";
+		};
+		9305BFA0141456D60052A06F /* SOCKit */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFA1141456DF0052A06F /* SOCKit.h */,
+				9305BFA2141456DF0052A06F /* SOCKit.m */,
+			);
+			name = SOCKit;
+			sourceTree = "<group>";
+		};
+		9305BFA4141459200052A06F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFA5141459370052A06F /* RootViewController.h */,
+				9305BFA6141459370052A06F /* RootViewController.m */,
+				9305BFA7141459370052A06F /* RootViewController.xib */,
+				9305BFAA1414594C0052A06F /* PhotoListViewController.h */,
+				9305BFAB1414594C0052A06F /* PhotoListViewController.m */,
+				9305BFAC1414594C0052A06F /* PhotoListViewController.xib */,
+				9305BFAF141459580052A06F /* PhotoViewController.h */,
+				9305BFB0141459580052A06F /* PhotoViewController.m */,
+				9305BFB1141459580052A06F /* PhotoViewController.xib */,
+				9305BFB4141459690052A06F /* AlbumListViewController.h */,
+				9305BFB5141459690052A06F /* AlbumListViewController.m */,
+				9305BFB6141459690052A06F /* AlbumListViewController.xib */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +211,10 @@
 			files = (
 				9305BF881414568D0052A06F /* InfoPlist.strings in Resources */,
 				9305BF911414568D0052A06F /* MainWindow.xib in Resources */,
+				9305BFA9141459370052A06F /* RootViewController.xib in Resources */,
+				9305BFAE1414594C0052A06F /* PhotoListViewController.xib in Resources */,
+				9305BFB3141459580052A06F /* PhotoViewController.xib in Resources */,
+				9305BFB8141459690052A06F /* AlbumListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +227,12 @@
 			files = (
 				9305BF8A1414568D0052A06F /* main.m in Sources */,
 				9305BF8E1414568D0052A06F /* ExampleAppDelegate.m in Sources */,
+				9305BF9E141456A70052A06F /* ABRouter.m in Sources */,
+				9305BFA3141456DF0052A06F /* SOCKit.m in Sources */,
+				9305BFA8141459370052A06F /* RootViewController.m in Sources */,
+				9305BFAD1414594C0052A06F /* PhotoListViewController.m in Sources */,
+				9305BFB2141459580052A06F /* PhotoViewController.m in Sources */,
+				9305BFB7141459690052A06F /* AlbumListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +342,7 @@
 				9305BF961414568D0052A06F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

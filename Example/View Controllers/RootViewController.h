@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController
-
+- (IBAction)viewAlbums:(id)sender;
+- (IBAction)viewPhotos:(id)sender;
 @end

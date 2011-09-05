@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoViewController : UIViewController
-
+@interface PhotoViewController : UIViewController <Routable>
+@property(nonatomic,retain) NSString *apiPath;
+@property(nonatomic,retain) IBOutlet UILabel *pathLabel;
 @end
