@@ -32,4 +32,9 @@
     [[ABRouter sharedRouter] navigateTo:@"/photos" withNavigationController:self.navigationController];
 }
 
+- (IBAction)modal:(id)sender
+{
+    [[ABRouter sharedRouter] modallyPresent:@"/photos" from:self];
+}
+
 @end

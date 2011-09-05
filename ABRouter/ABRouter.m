@@ -73,6 +73,14 @@ static ABRouter *_sharedRouter = nil;
 	[routePatterns addObject:[NSDictionary dictionaryWithObjectsAndKeys:[SOCPattern patternWithString:pattern], kPatternKey, aClass, kViewControllerKey, nil]];
 }
 
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController
+{
+    UIViewController<Routable> * pushMe = [self match:route];
+    pushMe.apiPath = route;
+    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
+    [viewController presentModalViewController:nav animated:YES];
+}
+
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
 {
 	UIViewController<Routable> * pushMe = [self match:route];
