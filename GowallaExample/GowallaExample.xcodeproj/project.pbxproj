@@ -31,6 +31,7 @@
 		9305C05714147AD50052A06F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C03E14147AD50052A06F /* JSONKit.m */; };
 		9305C05A14147AF90052A06F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305C05914147AF90052A06F /* libz.dylib */; };
 		9305C06014147DB20052A06F /* SpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C05F14147DB20052A06F /* SpotsTableViewController.m */; };
+		9305C0631414804A0052A06F /* CheckinsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C0621414804A0052A06F /* CheckinsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,8 @@
 		9305C05914147AF90052A06F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9305C05E14147DB20052A06F /* SpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsTableViewController.h; sourceTree = "<group>"; };
 		9305C05F14147DB20052A06F /* SpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsTableViewController.m; sourceTree = "<group>"; };
+		9305C0611414804A0052A06F /* CheckinsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinsTableViewController.h; sourceTree = "<group>"; };
+		9305C0621414804A0052A06F /* CheckinsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,8 @@
 			children = (
 				9305C05E14147DB20052A06F /* SpotsTableViewController.h */,
 				9305C05F14147DB20052A06F /* SpotsTableViewController.m */,
+				9305C0611414804A0052A06F /* CheckinsTableViewController.h */,
+				9305C0621414804A0052A06F /* CheckinsTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				9305C01514147A860052A06F /* UIImageView+AFNetworking.m in Sources */,
 				9305C05714147AD50052A06F /* JSONKit.m in Sources */,
 				9305C06014147DB20052A06F /* SpotsTableViewController.m in Sources */,
+				9305C0631414804A0052A06F /* CheckinsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
