@@ -1,3 +1,9 @@
 [submodule "SOCKit"]
 	path = SOCKit
 	url = git://github.com/jverkoey/sockit.git
+[submodule "GowallaExample/Libraries/AFNetworking"]
+	path = GowallaExample/Libraries/AFNetworking
+	url = git://github.com/gowalla/AFNetworking.git
+[submodule "GowallaExample/Libraries/JSONKit"]
+	path = GowallaExample/Libraries/JSONKit
+	url = git://github.com/johnezang/JSONKit.git

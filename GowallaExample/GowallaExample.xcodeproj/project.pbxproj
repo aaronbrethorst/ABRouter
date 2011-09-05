@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9305BFD0141478F80052A06F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BFCF141478F80052A06F /* UIKit.framework */; };
+		9305BFD2141478F80052A06F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BFD1141478F80052A06F /* Foundation.framework */; };
+		9305BFD4141478F80052A06F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BFD3141478F80052A06F /* CoreGraphics.framework */; };
+		9305BFDA141478F80052A06F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9305BFD8141478F80052A06F /* InfoPlist.strings */; };
+		9305BFDC141478F80052A06F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFDB141478F80052A06F /* main.m */; };
+		9305BFE0141478F80052A06F /* GowallaExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFDF141478F80052A06F /* GowallaExampleAppDelegate.m */; };
+		9305BFE3141478F80052A06F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9305BFE1141478F80052A06F /* MainWindow.xib */; };
+		9305BFEC1414790A0052A06F /* ABRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFEB1414790A0052A06F /* ABRouter.m */; };
+		9305BFF01414791F0052A06F /* SOCKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFEF1414791E0052A06F /* SOCKit.m */; };
+		9305BFF3141479BE0052A06F /* AFGowallaAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFF2141479BE0052A06F /* AFGowallaAPIClient.m */; };
+		9305C00B14147A860052A06F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFF614147A860052A06F /* AFHTTPRequestOperation.m */; };
+		9305C00C14147A860052A06F /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFF814147A860052A06F /* AFImageCache.m */; };
+		9305C00D14147A860052A06F /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFFA14147A860052A06F /* AFImageRequestOperation.m */; };
+		9305C00E14147A860052A06F /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFFC14147A860052A06F /* AFJSONRequestOperation.m */; };
+		9305C00F14147A860052A06F /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305BFFE14147A860052A06F /* AFNetworkActivityIndicatorManager.m */; };
+		9305C01014147A860052A06F /* AFRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C00014147A860052A06F /* AFRestClient.m */; };
+		9305C01114147A860052A06F /* NSData+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C00214147A860052A06F /* NSData+AFNetworking.m */; };
+		9305C01214147A860052A06F /* NSMutableURLRequest+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C00414147A860052A06F /* NSMutableURLRequest+AFNetworking.m */; };
+		9305C01314147A860052A06F /* NSString+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C00614147A860052A06F /* NSString+AFNetworking.m */; };
+		9305C01414147A860052A06F /* UIImage+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C00814147A860052A06F /* UIImage+AFNetworking.m */; };
+		9305C01514147A860052A06F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C00A14147A860052A06F /* UIImageView+AFNetworking.m */; };
+		9305C05714147AD50052A06F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C03E14147AD50052A06F /* JSONKit.m */; };
+		9305C05A14147AF90052A06F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305C05914147AF90052A06F /* libz.dylib */; };
+		9305C06014147DB20052A06F /* SpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9305C05F14147DB20052A06F /* SpotsTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9305BFCB141478F80052A06F /* GowallaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GowallaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9305BFCF141478F80052A06F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9305BFD1141478F80052A06F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9305BFD3141478F80052A06F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9305BFD7141478F80052A06F /* GowallaExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GowallaExample-Info.plist"; sourceTree = "<group>"; };
+		9305BFD9141478F80052A06F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9305BFDB141478F80052A06F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9305BFDD141478F80052A06F /* GowallaExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GowallaExample-Prefix.pch"; sourceTree = "<group>"; };
+		9305BFDE141478F80052A06F /* GowallaExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GowallaExampleAppDelegate.h; sourceTree = "<group>"; };
+		9305BFDF141478F80052A06F /* GowallaExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GowallaExampleAppDelegate.m; sourceTree = "<group>"; };
+		9305BFE2141478F80052A06F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		9305BFEA1414790A0052A06F /* ABRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABRouter.h; path = ../ABRouter/ABRouter.h; sourceTree = "<group>"; };
+		9305BFEB1414790A0052A06F /* ABRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ABRouter.m; path = ../ABRouter/ABRouter.m; sourceTree = "<group>"; };
+		9305BFEE1414791E0052A06F /* SOCKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SOCKit.h; path = ../SOCKit/SOCKit.h; sourceTree = "<group>"; };
+		9305BFEF1414791E0052A06F /* SOCKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SOCKit.m; path = ../SOCKit/SOCKit.m; sourceTree = "<group>"; };
+		9305BFF1141479BE0052A06F /* AFGowallaAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFGowallaAPIClient.h; sourceTree = "<group>"; };
+		9305BFF2141479BE0052A06F /* AFGowallaAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFGowallaAPIClient.m; sourceTree = "<group>"; };
+		9305BFF514147A860052A06F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		9305BFF614147A860052A06F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		9305BFF714147A860052A06F /* AFImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageCache.h; sourceTree = "<group>"; };
+		9305BFF814147A860052A06F /* AFImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageCache.m; sourceTree = "<group>"; };
+		9305BFF914147A860052A06F /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		9305BFFA14147A860052A06F /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		9305BFFB14147A860052A06F /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		9305BFFC14147A860052A06F /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		9305BFFD14147A860052A06F /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		9305BFFE14147A860052A06F /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		9305BFFF14147A860052A06F /* AFRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFRestClient.h; sourceTree = "<group>"; };
+		9305C00014147A860052A06F /* AFRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFRestClient.m; sourceTree = "<group>"; };
+		9305C00114147A860052A06F /* NSData+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AFNetworking.h"; sourceTree = "<group>"; };
+		9305C00214147A860052A06F /* NSData+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AFNetworking.m"; sourceTree = "<group>"; };
+		9305C00314147A860052A06F /* NSMutableURLRequest+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+AFNetworking.h"; sourceTree = "<group>"; };
+		9305C00414147A860052A06F /* NSMutableURLRequest+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+AFNetworking.m"; sourceTree = "<group>"; };
+		9305C00514147A860052A06F /* NSString+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AFNetworking.h"; sourceTree = "<group>"; };
+		9305C00614147A860052A06F /* NSString+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AFNetworking.m"; sourceTree = "<group>"; };
+		9305C00714147A860052A06F /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		9305C00814147A860052A06F /* UIImage+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AFNetworking.m"; sourceTree = "<group>"; };
+		9305C00914147A860052A06F /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		9305C00A14147A860052A06F /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		9305C03D14147AD50052A06F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		9305C03E14147AD50052A06F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		9305C05914147AF90052A06F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		9305C05E14147DB20052A06F /* SpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotsTableViewController.h; sourceTree = "<group>"; };
+		9305C05F14147DB20052A06F /* SpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotsTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9305BFC8141478F80052A06F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9305C05A14147AF90052A06F /* libz.dylib in Frameworks */,
+				9305BFD0141478F80052A06F /* UIKit.framework in Frameworks */,
+				9305BFD2141478F80052A06F /* Foundation.framework in Frameworks */,
+				9305BFD4141478F80052A06F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9305BFC0141478F80052A06F = {
+			isa = PBXGroup;
+			children = (
+				9305BFED141479120052A06F /* SOCKit */,
+				9305BFE9141478FD0052A06F /* ABRouter */,
+				9305BFD5141478F80052A06F /* GowallaExample */,
+				9305BFCE141478F80052A06F /* Frameworks */,
+				9305BFCC141478F80052A06F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9305BFCC141478F80052A06F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFCB141478F80052A06F /* GowallaExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9305BFCE141478F80052A06F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9305C05914147AF90052A06F /* libz.dylib */,
+				9305BFCF141478F80052A06F /* UIKit.framework */,
+				9305BFD1141478F80052A06F /* Foundation.framework */,
+				9305BFD3141478F80052A06F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9305BFD5141478F80052A06F /* GowallaExample */ = {
+			isa = PBXGroup;
+			children = (
+				9305C05D14147D910052A06F /* View Controllers */,
+				9305C05B14147D720052A06F /* Libraries */,
+				9305BFDE141478F80052A06F /* GowallaExampleAppDelegate.h */,
+				9305BFDF141478F80052A06F /* GowallaExampleAppDelegate.m */,
+				9305BFE1141478F80052A06F /* MainWindow.xib */,
+				9305BFD6141478F80052A06F /* Supporting Files */,
+				9305BFF1141479BE0052A06F /* AFGowallaAPIClient.h */,
+				9305BFF2141479BE0052A06F /* AFGowallaAPIClient.m */,
+			);
+			path = GowallaExample;
+			sourceTree = "<group>";
+		};
+		9305BFD6141478F80052A06F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFD7141478F80052A06F /* GowallaExample-Info.plist */,
+				9305BFD8141478F80052A06F /* InfoPlist.strings */,
+				9305BFDB141478F80052A06F /* main.m */,
+				9305BFDD141478F80052A06F /* GowallaExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9305BFE9141478FD0052A06F /* ABRouter */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFEA1414790A0052A06F /* ABRouter.h */,
+				9305BFEB1414790A0052A06F /* ABRouter.m */,
+			);
+			name = ABRouter;
+			sourceTree = "<group>";
+		};
+		9305BFED141479120052A06F /* SOCKit */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFEE1414791E0052A06F /* SOCKit.h */,
+				9305BFEF1414791E0052A06F /* SOCKit.m */,
+			);
+			name = SOCKit;
+			sourceTree = "<group>";
+		};
+		9305BFF414147A860052A06F /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				9305BFF514147A860052A06F /* AFHTTPRequestOperation.h */,
+				9305BFF614147A860052A06F /* AFHTTPRequestOperation.m */,
+				9305BFF714147A860052A06F /* AFImageCache.h */,
+				9305BFF814147A860052A06F /* AFImageCache.m */,
+				9305BFF914147A860052A06F /* AFImageRequestOperation.h */,
+				9305BFFA14147A860052A06F /* AFImageRequestOperation.m */,
+				9305BFFB14147A860052A06F /* AFJSONRequestOperation.h */,
+				9305BFFC14147A860052A06F /* AFJSONRequestOperation.m */,
+				9305BFFD14147A860052A06F /* AFNetworkActivityIndicatorManager.h */,
+				9305BFFE14147A860052A06F /* AFNetworkActivityIndicatorManager.m */,
+				9305BFFF14147A860052A06F /* AFRestClient.h */,
+				9305C00014147A860052A06F /* AFRestClient.m */,
+				9305C00114147A860052A06F /* NSData+AFNetworking.h */,
+				9305C00214147A860052A06F /* NSData+AFNetworking.m */,
+				9305C00314147A860052A06F /* NSMutableURLRequest+AFNetworking.h */,
+				9305C00414147A860052A06F /* NSMutableURLRequest+AFNetworking.m */,
+				9305C00514147A860052A06F /* NSString+AFNetworking.h */,
+				9305C00614147A860052A06F /* NSString+AFNetworking.m */,
+				9305C00714147A860052A06F /* UIImage+AFNetworking.h */,
+				9305C00814147A860052A06F /* UIImage+AFNetworking.m */,
+				9305C00914147A860052A06F /* UIImageView+AFNetworking.h */,
+				9305C00A14147A860052A06F /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = Libraries/AFNetworking/AFNetworking;
+			sourceTree = SOURCE_ROOT;
+		};
+		9305C01614147AD50052A06F /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				9305C03D14147AD50052A06F /* JSONKit.h */,
+				9305C03E14147AD50052A06F /* JSONKit.m */,
+			);
+			name = JSONKit;
+			path = Libraries/JSONKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		9305C05B14147D720052A06F /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9305C01614147AD50052A06F /* JSONKit */,
+				9305BFF414147A860052A06F /* AFNetworking */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		9305C05D14147D910052A06F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9305C05E14147DB20052A06F /* SpotsTableViewController.h */,
+				9305C05F14147DB20052A06F /* SpotsTableViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9305BFCA141478F80052A06F /* GowallaExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9305BFE6141478F80052A06F /* Build configuration list for PBXNativeTarget "GowallaExample" */;
+			buildPhases = (
+				9305BFC7141478F80052A06F /* Sources */,
+				9305BFC8141478F80052A06F /* Frameworks */,
+				9305BFC9141478F80052A06F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GowallaExample;
+			productName = GowallaExample;
+			productReference = 9305BFCB141478F80052A06F /* GowallaExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9305BFC2141478F80052A06F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Structlab LLC";
+			};
+			buildConfigurationList = 9305BFC5141478F80052A06F /* Build configuration list for PBXProject "GowallaExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9305BFC0141478F80052A06F;
+			productRefGroup = 9305BFCC141478F80052A06F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9305BFCA141478F80052A06F /* GowallaExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9305BFC9141478F80052A06F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9305BFDA141478F80052A06F /* InfoPlist.strings in Resources */,
+				9305BFE3141478F80052A06F /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9305BFC7141478F80052A06F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9305BFDC141478F80052A06F /* main.m in Sources */,
+				9305BFE0141478F80052A06F /* GowallaExampleAppDelegate.m in Sources */,
+				9305BFEC1414790A0052A06F /* ABRouter.m in Sources */,
+				9305BFF01414791F0052A06F /* SOCKit.m in Sources */,
+				9305BFF3141479BE0052A06F /* AFGowallaAPIClient.m in Sources */,
+				9305C00B14147A860052A06F /* AFHTTPRequestOperation.m in Sources */,
+				9305C00C14147A860052A06F /* AFImageCache.m in Sources */,
+				9305C00D14147A860052A06F /* AFImageRequestOperation.m in Sources */,
+				9305C00E14147A860052A06F /* AFJSONRequestOperation.m in Sources */,
+				9305C00F14147A860052A06F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				9305C01014147A860052A06F /* AFRestClient.m in Sources */,
+				9305C01114147A860052A06F /* NSData+AFNetworking.m in Sources */,
+				9305C01214147A860052A06F /* NSMutableURLRequest+AFNetworking.m in Sources */,
+				9305C01314147A860052A06F /* NSString+AFNetworking.m in Sources */,
+				9305C01414147A860052A06F /* UIImage+AFNetworking.m in Sources */,
+				9305C01514147A860052A06F /* UIImageView+AFNetworking.m in Sources */,
+				9305C05714147AD50052A06F /* JSONKit.m in Sources */,
+				9305C06014147DB20052A06F /* SpotsTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9305BFD8141478F80052A06F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9305BFD9141478F80052A06F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9305BFE1141478F80052A06F /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9305BFE2141478F80052A06F /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9305BFE4141478F80052A06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9305BFE5141478F80052A06F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9305BFE7141478F80052A06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GowallaExample/GowallaExample-Prefix.pch";
+				INFOPLIST_FILE = "GowallaExample/GowallaExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9305BFE8141478F80052A06F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GowallaExample/GowallaExample-Prefix.pch";
+				INFOPLIST_FILE = "GowallaExample/GowallaExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9305BFC5141478F80052A06F /* Build configuration list for PBXProject "GowallaExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9305BFE4141478F80052A06F /* Debug */,
+				9305BFE5141478F80052A06F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9305BFE6141478F80052A06F /* Build configuration list for PBXNativeTarget "GowallaExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9305BFE7141478F80052A06F /* Debug */,
+				9305BFE8141478F80052A06F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9305BFC2141478F80052A06F /* Project object */;
+}
