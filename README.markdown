@@ -13,7 +13,20 @@ I don't know about you, but I'm really tired of explicitly importing and pushing
 Some Specifics
 ====
 
-Every view controller that wants to participate in the routing system must implement the `Routable` protocol. And they should be initializable solely through their `-init` method. That's it. You can't route the root yet. 
+Every view controller that wants to participate in the routing system must implement the `Routable` protocol. And they should be initializable solely through their `-init` method. That's it. You can't route the root yet.
+
+Examples
+====
+
+Example
+-----
+
+A super-simple example that shows how this works without involving anything ugly, like pulling data over the wire. :)
+
+GowallaExample
+-----
+
+Shows you a list of the closest Gowalla 'spots' to where I was at the time of writing this example. Tap a spot to show the most recent checkins there. This example pulls in AFNetworking, and attempts to demonstrate the value of this sort of URL/view controller routing system.
 
 MIT License
 =====
