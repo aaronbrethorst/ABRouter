@@ -26,7 +26,7 @@ A super-simple example that shows how this works without involving anything ugly
 GowallaExample
 -----
 
-Shows you a list of the closest Gowalla 'spots' to where I was at the time of writing this example. Tap a spot to show the most recent checkins there. This example pulls in AFNetworking, and attempts to demonstrate the value of this sort of URL/view controller routing system.
+Shows you a list of the closest Gowalla 'spots' to where I was at the time of writing this example. Tap a spot to show more information about it. This example pulls in AFNetworking, and attempts to demonstrate the value of this sort of URL/view controller routing system.
 
 MIT License
 =====
