@@ -18,8 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[ABRouter sharedRouter] registerURLPattern:@"/spots/:spot_id" forViewControllerClass:[SpotViewController class]];
-    [[ABRouter sharedRouter] registerURLPattern:@"/spots/:spot_id/events" forViewControllerClass:[CheckinsTableViewController class]];
+    [[ABRouter sharedRouter] match:@"/spots/:spot_id" to:[SpotViewController class]];
+    [[ABRouter sharedRouter] match:@"/spots/:spot_id/events" to:[CheckinsTableViewController class]];
+    
     self.spotsTableViewController = [[[SpotsTableViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.spotsTableViewController] autorelease];
     [self.window addSubview:self.navigationController.view];

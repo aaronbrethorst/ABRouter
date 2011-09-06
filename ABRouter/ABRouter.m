@@ -63,7 +63,7 @@ static ABRouter *_sharedRouter = nil;
 
 #pragma mark - Public Methods
 
-- (void)registerURLPattern:(NSString*)pattern forViewControllerClass:(Class)aClass
+- (void)match:(NSString*)pattern to:(Class)aClass
 {
     if (![aClass conformsToProtocol:@protocol(Routable)])
     {

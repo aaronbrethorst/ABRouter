@@ -15,6 +15,20 @@ Some Specifics
 
 Every view controller that wants to participate in the routing system must implement the `Routable` protocol. And they should be initializable solely through their `-init` method. That's it. You can't route the root yet.
 
+In your App Delegate
+-----
+
+Match URL patterns to view controllers:
+
+    [[ABRouter sharedRouter] match:@"/api/path" to:[MyViewController class]];
+    
+In your view controllers
+-----
+
+Create, populate, and push view controllers:
+
+    [[ABRouter sharedRouter] navigateTo:[dict objectForKey:@"url"] withNavigationController:self.navigationController];
+
 Examples
 ====
 

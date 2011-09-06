@@ -20,10 +20,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[ABRouter sharedRouter] registerURLPattern:@"/photos" forViewControllerClass:[PhotoListViewController class]];
-    [[ABRouter sharedRouter] registerURLPattern:@"/photos/:id" forViewControllerClass:[PhotoViewController class]];
-    [[ABRouter sharedRouter] registerURLPattern:@"/albums" forViewControllerClass:[AlbumListViewController class]];
-    [[ABRouter sharedRouter] registerURLPattern:@"/albums/:id" forViewControllerClass:[PhotoListViewController class]];
+    [[ABRouter sharedRouter] match:@"/photos" to:[PhotoListViewController class]];
+    [[ABRouter sharedRouter] match:@"/photos/:id" to:[PhotoViewController class]];
+    [[ABRouter sharedRouter] match:@"/albums" to:[AlbumListViewController class]];
+    [[ABRouter sharedRouter] match:@"/albums/:id" to:[PhotoListViewController class]];
     
     self.rootViewController = [[[RootViewController alloc] init] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.rootViewController] autorelease];

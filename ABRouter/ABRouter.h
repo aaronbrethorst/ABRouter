@@ -29,7 +29,7 @@
 	NSMutableArray *routePatterns;
 }
 + (ABRouter*)sharedRouter;
-- (void)registerURLPattern:(NSString*)pattern forViewControllerClass:(Class)aClass;
+- (void)match:(NSString*)pattern to:(Class)aClass;
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
 @end
