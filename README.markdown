@@ -22,12 +22,17 @@ Match URL patterns to view controllers:
 
     [[ABRouter sharedRouter] match:@"/api/path" to:[MyViewController class]];
     
-In your view controllers
+In your parent view controllers
 -----
 
 Create, populate, and push view controllers:
 
     [[ABRouter sharedRouter] navigateTo:[dict objectForKey:@"url"] withNavigationController:self.navigationController];
+
+In your subordinate view controllers
+-----
+
+Implement the `Routable` protocol, including the `apiPath` NSString property and optionally the `parameters` NSDictionary.
 
 Examples
 ====
@@ -41,6 +46,11 @@ GowallaExample
 -----
 
 Shows you a list of the closest Gowalla 'spots' to where I was at the time of writing this example. Tap a spot to show more information about it. This example pulls in AFNetworking, and attempts to demonstrate the value of this sort of URL/view controller routing system.
+
+MappingExample
+-----
+
+Demonstrates how to pass a dictionary of keys and values from the URL to the target view controller.
 
 MIT License
 =====

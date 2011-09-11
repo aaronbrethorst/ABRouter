@@ -22,6 +22,9 @@
 
 @protocol Routable <NSObject>
 @property(nonatomic,retain) NSString *apiPath;
+
+@optional
+@property(nonatomic,retain) NSDictionary *parameters;
 @end
 
 @interface ABRouter : NSObject

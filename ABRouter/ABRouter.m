@@ -84,7 +84,6 @@ static ABRouter *_sharedRouter = nil;
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
 {
 	UIViewController<Routable> * pushMe = [self match:route];
-    pushMe.apiPath = route;
 	[navController pushViewController:pushMe animated:YES];
 }
 
@@ -112,8 +111,19 @@ static ABRouter *_sharedRouter = nil;
         return nil;
     }
     
-    Class class = [[potentialMatches lastObject] objectForKey:kViewControllerKey];
+    NSDictionary *match = [potentialMatches lastObject];
+    
+    SOCPattern *pattern = [match objectForKey:kPatternKey];
+    Class class = [match objectForKey:kViewControllerKey];
+    
     UIViewController<Routable> * pushMe = [[[class alloc] init] autorelease];
+    pushMe.apiPath = route;
+    
+    if ([pushMe respondsToSelector:@selector(setParameters:)])
+    {
+        [pushMe performSelector:@selector(setParameters:) withObject:[pattern extractParameterKeyValuesFromSourceString:route]];
+    }
+    
     return pushMe;
 }
 
