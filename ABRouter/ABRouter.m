@@ -81,10 +81,17 @@ static ABRouter *_sharedRouter = nil;
     [viewController presentModalViewController:nav animated:YES];
 }
 
+- (void)display:(id)obj withNavigationController:(UINavigationController*)navController
+{
+    UIViewController<Routable> * pushMe = [self match:[obj path]];
+    pushMe.entity = obj;
+    [navController pushViewController:pushMe animated:YES];
+}
+
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
 {
-	UIViewController<Routable> * pushMe = [self match:route];
-	[navController pushViewController:pushMe animated:YES];
+    UIViewController<Routable> * pushMe = [self match:route];
+    [navController pushViewController:pushMe animated:YES];
 }
 
 #pragma mark - Private Methods

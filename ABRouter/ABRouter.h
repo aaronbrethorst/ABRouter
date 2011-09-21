@@ -25,6 +25,7 @@
 
 @optional
 @property(nonatomic,retain) NSDictionary *parameters;
+@property(nonatomic,retain) id entity;
 @end
 
 @interface ABRouter : NSObject
@@ -33,6 +34,7 @@
 }
 + (ABRouter*)sharedRouter;
 - (void)match:(NSString*)pattern to:(Class)aClass;
+- (void)display:(id)obj withNavigationController:(UINavigationController*)navController;
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
 @end

@@ -28,6 +28,12 @@ In your parent view controllers
 Create, populate, and push view controllers:
 
     [[ABRouter sharedRouter] navigateTo:[dict objectForKey:@"url"] withNavigationController:self.navigationController];
+    
+or
+
+    [[ABRouter sharedRouter] display:obj withNavigationController:self.navigationController];
+    
+-display:withNavigationController: is a little janky at present, as it expects your object to have a -path method, but I haven't added a protocol for objects to enforce this. Soon, I promise.
 
 In your subordinate view controllers
 -----
