@@ -26,10 +26,6 @@
 
 static ABRouter *_sharedRouter = nil;
 
-@interface ABRouter ()
-- (UIViewController<Routable> *)match:(NSString*)route;
-@end
-
 @implementation ABRouter
 
 + (ABRouter*)sharedRouter
@@ -93,8 +89,6 @@ static ABRouter *_sharedRouter = nil;
     UIViewController<Routable> * pushMe = [self match:route];
     [navController pushViewController:pushMe animated:YES];
 }
-
-#pragma mark - Private Methods
 
 - (UIViewController<Routable> *)match:(NSString*)route
 {

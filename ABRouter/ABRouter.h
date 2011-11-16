@@ -37,4 +37,5 @@
 - (void)display:(id)obj withNavigationController:(UINavigationController*)navController;
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
+- (UIViewController<Routable> *)match:(NSString*)route;
 @end
