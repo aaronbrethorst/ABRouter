@@ -122,7 +122,7 @@ static ABRouter *_sharedRouter = nil;
     
     if ([pushMe respondsToSelector:@selector(setParameters:)])
     {
-        [pushMe performSelector:@selector(setParameters:) withObject:[pattern extractParameterKeyValuesFromSourceString:route]];
+        [pushMe performSelector:@selector(setParameters:) withObject:[pattern parameterDictionaryFromSourceString:route]];
     }
     
     return pushMe;
