@@ -92,8 +92,10 @@ static ABRouter *_sharedRouter = nil;
 
 - (UIViewController<Routable> *)match:(NSString*)route
 {
-    NSMutableArray *potentialMatches = [NSMutableArray array];
+    NSArray *pathInfo = [route componentsSeparatedByString:@"?"];
+    route = [pathInfo objectAtIndex:0];
     
+    NSMutableArray *potentialMatches = [NSMutableArray array];
     for (NSDictionary *d in routePatterns)
 	{
 		if ([[d objectForKey:kPatternKey] stringMatches:route])
@@ -122,7 +124,27 @@ static ABRouter *_sharedRouter = nil;
     
     if ([pushMe respondsToSelector:@selector(setParameters:)])
     {
-        [pushMe performSelector:@selector(setParameters:) withObject:[pattern parameterDictionaryFromSourceString:route]];
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        
+        if (pathInfo.count > 1)
+        {
+            NSString *paramsString = [pathInfo objectAtIndex:1];
+            NSArray *paramStringArr = [paramsString componentsSeparatedByString:@"&"];
+            for (NSString *paramString in paramStringArr)
+            {
+                NSArray *paramArr = [paramsString componentsSeparatedByString:@"="];
+                if (paramArr.count > 1)
+                {
+                    NSString *key = [paramArr objectAtIndex:0];
+                    NSString *value = [paramArr objectAtIndex:1];
+                    [params setObject:value forKey:key];
+                }
+            }
+        }
+        
+        [params addEntriesFromDictionary:[pattern parameterDictionaryFromSourceString:route]];
+        
+        [pushMe performSelector:@selector(setParameters:) withObject:params];
     }
     
     return pushMe;
