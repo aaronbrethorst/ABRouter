@@ -19,7 +19,8 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "ABRouter.h"
-#import "SOCKit.h"
+#import <RestKit/SOCKit.h>
+//#import "SOCKit.h"
 
 #define kPatternKey @"PatternKey"
 #define kViewControllerKey @"ViewControllerKey"
@@ -132,7 +133,7 @@ static ABRouter *_sharedRouter = nil;
             NSArray *paramStringArr = [paramsString componentsSeparatedByString:@"&"];
             for (NSString *paramString in paramStringArr)
             {
-                NSArray *paramArr = [paramsString componentsSeparatedByString:@"="];
+                NSArray *paramArr = [paramString componentsSeparatedByString:@"="];
                 if (paramArr.count > 1)
                 {
                     NSString *key = [paramArr objectAtIndex:0];
