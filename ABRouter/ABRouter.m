@@ -19,8 +19,7 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "ABRouter.h"
-#import <RestKit/SOCKit.h>
-//#import "SOCKit.h"
+#import "SOCKit.h"
 
 #define kPatternKey @"PatternKey"
 #define kViewControllerKey @"ViewControllerKey"
