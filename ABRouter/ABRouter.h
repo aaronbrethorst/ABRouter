@@ -41,5 +41,5 @@
 - (void)navigateTo:(NSString*)route navigationController:(UINavigationController*)navController parameters:(NSDictionary*)parameters;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController parameters:(NSDictionary*)parameters;
-- (ABViewController<Routable> *)match:(NSString*)route;
+- (UIViewController<Routable> *)match:(NSString*)route;
 @end

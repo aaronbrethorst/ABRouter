@@ -24,6 +24,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    self.parameters = nil;
+    self.apiPath = nil;
+    
+    [super dealloc];
+}
 
 - (void)viewDidLoad
 {

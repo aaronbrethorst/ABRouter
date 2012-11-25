@@ -22,6 +22,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    self.apiPath = nil;
+    [super dealloc];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad

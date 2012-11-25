@@ -20,7 +20,6 @@
 
 #import "ABRouter.h"
 #import "SOCKit.h"
-#import "ABViewController.h"
 #define kPatternKey @"PatternKey"
 #define kViewControllerKey @"ViewControllerKey"
 
@@ -70,44 +69,41 @@ static ABRouter *_sharedRouter = nil;
 	[routePatterns addObject:[NSDictionary dictionaryWithObjectsAndKeys:[SOCPattern patternWithString:pattern], kPatternKey, aClass, kViewControllerKey, nil]];
 }
 
-- (void)modallyPresent:(NSString*)route from:(ABViewController*)viewController
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController parameters:(NSDictionary *)parameters
 {
-    ABViewController<Routable> * pushMe = [self match:route];
+    UIViewController<Routable> * pushMe = [self match:route];
     pushMe.apiPath = route;
+    if ([pushMe respondsToSelector:@selector(setParameters:)] && parameters) [pushMe performSelector:@selector(setParameters:) withObject:parameters];
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
     [viewController presentModalViewController:nav animated:YES];
 }
 
-- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController parameters:(NSDictionary *)parameters
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController
 {
-    ABViewController<Routable> * pushMe = [self match:route];
-    pushMe.apiPath = route;
-    pushMe.parameters = parameters;
-    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
-    [viewController presentModalViewController:nav animated:YES];
+    [self modallyPresent:route from:viewController parameters:nil];
 }
 
 - (void)display:(id)obj withNavigationController:(UINavigationController*)navController
 {
-    ABViewController<Routable> * pushMe = [self match:[obj path]];
+    UIViewController<Routable> * pushMe = [self match:[obj path]];
     pushMe.entity = obj;
-    [navController pushViewController:pushMe animated:YES];
-}
-
-- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
-{
-    ABViewController<Routable> * pushMe = [self match:route];
     [navController pushViewController:pushMe animated:YES];
 }
 
 - (void)navigateTo:(NSString*)route navigationController:(UINavigationController*)navController parameters:(NSDictionary *)parameters
 {
-    ABViewController<Routable> * pushMe = [self match:route];
-    pushMe.parameters = parameters;
+    UIViewController<Routable> * pushMe = [self match:route];
+    pushMe.apiPath = route;
+    if ([pushMe respondsToSelector:@selector(setParameters:)] && parameters) [pushMe performSelector:@selector(setParameters:) withObject:parameters];
     [navController pushViewController:pushMe animated:YES];
 }
 
-- (ABViewController<Routable> *)match:(NSString*)route
+- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
+{
+    [self navigateTo:route navigationController:navController parameters:nil];
+}
+
+- (UIViewController<Routable> *)match:(NSString*)route
 {
     NSArray *pathInfo = [route componentsSeparatedByString:@"?"];
     route = [pathInfo objectAtIndex:0];
@@ -137,7 +133,7 @@ static ABRouter *_sharedRouter = nil;
     Class class = [match objectForKey:kViewControllerKey];
     
     
-    ABViewController<Routable> * pushMe = [[[class alloc] init] autorelease];
+    UIViewController<Routable> * pushMe = [[[class alloc] init] autorelease];
     pushMe.apiPath = route;
     
     if ([pushMe respondsToSelector:@selector(setParameters:)])

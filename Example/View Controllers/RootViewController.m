@@ -29,13 +29,13 @@
 
 - (IBAction)viewPhotos:(id)sender
 {
-    [[ABRouter sharedRouter] navigateTo:@"/photos" withNavigationController:self.navigationController];
+    [[ABRouter sharedRouter] navigateTo:@"/photos" navigationController:self.navigationController parameters:nil];
 }
 
 - (IBAction)viewObject:(id)sender
 {
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate date],@"date",nil];
-    [[ABRouter sharedRouter] navigateTo:@"/object" withNavigationController:self.navigationController andQuery:query];
+    [[ABRouter sharedRouter] navigateTo:@"/object" navigationController:self.navigationController parameters:query];
 }
 
 

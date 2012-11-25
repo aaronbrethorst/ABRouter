@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FED60E216629B370011D051 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FED60E116629B370011D051 /* ABViewController.m */; };
 		8FED60E716629DB30011D051 /* ObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FED60E516629DB30011D051 /* ObjectViewController.m */; };
 		8FED60E816629DB30011D051 /* ObjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FED60E616629DB30011D051 /* ObjectViewController.xib */; };
 		9305BF7E1414568D0052A06F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BF7D1414568D0052A06F /* UIKit.framework */; };
@@ -30,8 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8FED60E016629B370011D051 /* ABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
-		8FED60E116629B370011D051 /* ABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
 		8FED60E416629DB30011D051 /* ObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectViewController.h; sourceTree = "<group>"; };
 		8FED60E516629DB30011D051 /* ObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectViewController.m; sourceTree = "<group>"; };
 		8FED60E616629DB30011D051 /* ObjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjectViewController.xib; sourceTree = "<group>"; };
@@ -135,8 +132,6 @@
 			children = (
 				9305BF9C141456A70052A06F /* ABRouter.h */,
 				9305BF9D141456A70052A06F /* ABRouter.m */,
-				8FED60E016629B370011D051 /* ABViewController.h */,
-				8FED60E116629B370011D051 /* ABViewController.m */,
 			);
 			path = ABRouter;
 			sourceTree = "<group>";
@@ -247,7 +242,6 @@
 				9305BFAD1414594C0052A06F /* PhotoListViewController.m in Sources */,
 				9305BFB2141459580052A06F /* PhotoViewController.m in Sources */,
 				9305BFB7141459690052A06F /* AlbumListViewController.m in Sources */,
-				8FED60E216629B370011D051 /* ABViewController.m in Sources */,
 				8FED60E716629DB30011D051 /* ObjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

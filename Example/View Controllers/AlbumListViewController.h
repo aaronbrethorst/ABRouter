@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ABViewController.h"
 
-@interface AlbumListViewController : ABViewController
-@property(nonatomic,retain) IBOutlet UILabel *pathLabel;
+@interface AlbumListViewController : UIViewController <Routable>
+@property (nonatomic, retain) NSString *apiPath;
+@property (nonatomic,retain) IBOutlet UILabel *pathLabel;
 - (IBAction)showAlbum:(id)sender;
 @end
