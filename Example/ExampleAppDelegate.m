@@ -12,6 +12,7 @@
 #import "PhotoViewController.h"
 #import "AlbumListViewController.h"
 #import "PhotoListViewController.h"
+#import "ObjectViewController.h"
 
 @implementation ExampleAppDelegate
 
@@ -24,7 +25,8 @@
     [[ABRouter sharedRouter] match:@"/photos/:id" to:[PhotoViewController class]];
     [[ABRouter sharedRouter] match:@"/albums" to:[AlbumListViewController class]];
     [[ABRouter sharedRouter] match:@"/albums/:id" to:[PhotoListViewController class]];
-    
+    [[ABRouter sharedRouter] match:@"/object" to:[ObjectViewController class]];
+
     self.rootViewController = [[[RootViewController alloc] init] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.rootViewController] autorelease];
     [self.window addSubview:self.navigationController.view];

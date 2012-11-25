@@ -11,5 +11,6 @@
 @interface RootViewController : UIViewController
 - (IBAction)viewAlbums:(id)sender;
 - (IBAction)viewPhotos:(id)sender;
+- (IBAction)viewObject:(id)sender;
 - (IBAction)modal:(id)sender;
 @end

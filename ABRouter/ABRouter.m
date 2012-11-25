@@ -20,9 +20,10 @@
 
 #import "ABRouter.h"
 #import "SOCKit.h"
-
+#import "ABViewController.h"
 #define kPatternKey @"PatternKey"
 #define kViewControllerKey @"ViewControllerKey"
+
 
 static ABRouter *_sharedRouter = nil;
 
@@ -69,28 +70,44 @@ static ABRouter *_sharedRouter = nil;
 	[routePatterns addObject:[NSDictionary dictionaryWithObjectsAndKeys:[SOCPattern patternWithString:pattern], kPatternKey, aClass, kViewControllerKey, nil]];
 }
 
-- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController
+- (void)modallyPresent:(NSString*)route from:(ABViewController*)viewController
 {
-    UIViewController<Routable> * pushMe = [self match:route];
+    ABViewController<Routable> * pushMe = [self match:route];
     pushMe.apiPath = route;
+    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
+    [viewController presentModalViewController:nav animated:YES];
+}
+
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController withQuery:(NSDictionary*)query
+{
+    ABViewController<Routable> * pushMe = [self match:route];
+    pushMe.apiPath = route;
+    pushMe.query = query;
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
     [viewController presentModalViewController:nav animated:YES];
 }
 
 - (void)display:(id)obj withNavigationController:(UINavigationController*)navController
 {
-    UIViewController<Routable> * pushMe = [self match:[obj path]];
+    ABViewController<Routable> * pushMe = [self match:[obj path]];
     pushMe.entity = obj;
     [navController pushViewController:pushMe animated:YES];
 }
 
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
 {
-    UIViewController<Routable> * pushMe = [self match:route];
+    ABViewController<Routable> * pushMe = [self match:route];
     [navController pushViewController:pushMe animated:YES];
 }
 
-- (UIViewController<Routable> *)match:(NSString*)route
+- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController andQuery:(NSDictionary*)query
+{
+    ABViewController<Routable> * pushMe = [self match:route];
+    pushMe.query = query;
+    [navController pushViewController:pushMe animated:YES];
+}
+
+- (ABViewController<Routable> *)match:(NSString*)route
 {
     NSArray *pathInfo = [route componentsSeparatedByString:@"?"];
     route = [pathInfo objectAtIndex:0];
@@ -119,7 +136,8 @@ static ABRouter *_sharedRouter = nil;
     SOCPattern *pattern = [match objectForKey:kPatternKey];
     Class class = [match objectForKey:kViewControllerKey];
     
-    UIViewController<Routable> * pushMe = [[[class alloc] init] autorelease];
+    
+    ABViewController<Routable> * pushMe = [[[class alloc] init] autorelease];
     pushMe.apiPath = route;
     
     if ([pushMe respondsToSelector:@selector(setParameters:)])

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FED60E216629B370011D051 /* ABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FED60E116629B370011D051 /* ABViewController.m */; };
+		8FED60E716629DB30011D051 /* ObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FED60E516629DB30011D051 /* ObjectViewController.m */; };
+		8FED60E816629DB30011D051 /* ObjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FED60E616629DB30011D051 /* ObjectViewController.xib */; };
 		9305BF7E1414568D0052A06F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BF7D1414568D0052A06F /* UIKit.framework */; };
 		9305BF801414568D0052A06F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BF7F1414568D0052A06F /* Foundation.framework */; };
 		9305BF821414568D0052A06F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305BF811414568D0052A06F /* CoreGraphics.framework */; };
@@ -27,6 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8FED60E016629B370011D051 /* ABViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABViewController.h; sourceTree = "<group>"; };
+		8FED60E116629B370011D051 /* ABViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABViewController.m; sourceTree = "<group>"; };
+		8FED60E416629DB30011D051 /* ObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectViewController.h; sourceTree = "<group>"; };
+		8FED60E516629DB30011D051 /* ObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectViewController.m; sourceTree = "<group>"; };
+		8FED60E616629DB30011D051 /* ObjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjectViewController.xib; sourceTree = "<group>"; };
 		9305BF791414568D0052A06F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9305BF7D1414568D0052A06F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9305BF7F1414568D0052A06F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +135,8 @@
 			children = (
 				9305BF9C141456A70052A06F /* ABRouter.h */,
 				9305BF9D141456A70052A06F /* ABRouter.m */,
+				8FED60E016629B370011D051 /* ABViewController.h */,
+				8FED60E116629B370011D051 /* ABViewController.m */,
 			);
 			path = ABRouter;
 			sourceTree = "<group>";
@@ -155,6 +165,9 @@
 				9305BFB4141459690052A06F /* AlbumListViewController.h */,
 				9305BFB5141459690052A06F /* AlbumListViewController.m */,
 				9305BFB6141459690052A06F /* AlbumListViewController.xib */,
+				8FED60E416629DB30011D051 /* ObjectViewController.h */,
+				8FED60E516629DB30011D051 /* ObjectViewController.m */,
+				8FED60E616629DB30011D051 /* ObjectViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -215,6 +228,7 @@
 				9305BFAE1414594C0052A06F /* PhotoListViewController.xib in Resources */,
 				9305BFB3141459580052A06F /* PhotoViewController.xib in Resources */,
 				9305BFB8141459690052A06F /* AlbumListViewController.xib in Resources */,
+				8FED60E816629DB30011D051 /* ObjectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +247,8 @@
 				9305BFAD1414594C0052A06F /* PhotoListViewController.m in Sources */,
 				9305BFB2141459580052A06F /* PhotoViewController.m in Sources */,
 				9305BFB7141459690052A06F /* AlbumListViewController.m in Sources */,
+				8FED60E216629B370011D051 /* ABViewController.m in Sources */,
+				8FED60E716629DB30011D051 /* ObjectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +322,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -317,6 +334,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Example/Example-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

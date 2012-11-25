@@ -32,6 +32,13 @@
     [[ABRouter sharedRouter] navigateTo:@"/photos" withNavigationController:self.navigationController];
 }
 
+- (IBAction)viewObject:(id)sender
+{
+    NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate date],@"date",nil];
+    [[ABRouter sharedRouter] navigateTo:@"/object" withNavigationController:self.navigationController andQuery:query];
+}
+
+
 - (IBAction)modal:(id)sender
 {
     [[ABRouter sharedRouter] modallyPresent:@"/photos" from:self];

@@ -20,6 +20,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class ABViewController;
+
 @protocol Routable <NSObject>
 @property(nonatomic,retain) NSString *apiPath;
 
@@ -36,6 +38,8 @@
 - (void)match:(NSString*)pattern to:(Class)aClass;
 - (void)display:(id)obj withNavigationController:(UINavigationController*)navController;
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController;
+- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController andQuery:(NSDictionary*)query;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
-- (UIViewController<Routable> *)match:(NSString*)route;
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController withQuery:(NSDictionary*)query;
+- (ABViewController<Routable> *)match:(NSString*)route;
 @end
