@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     
-    NSDate *date = [self.query objectForKey:@"date"];
+    NSDate *date = [self.parameters objectForKey:@"date"];
     [self.dateLabel setText:[NSString stringWithFormat:@"%@",date]];
     // Do any additional setup after loading the view from its nib.
 }

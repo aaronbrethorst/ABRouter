@@ -78,11 +78,11 @@ static ABRouter *_sharedRouter = nil;
     [viewController presentModalViewController:nav animated:YES];
 }
 
-- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController withQuery:(NSDictionary*)query
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController parameters:(NSDictionary *)parameters
 {
     ABViewController<Routable> * pushMe = [self match:route];
     pushMe.apiPath = route;
-    pushMe.query = query;
+    pushMe.parameters = parameters;
     UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
     [viewController presentModalViewController:nav animated:YES];
 }
@@ -100,10 +100,10 @@ static ABRouter *_sharedRouter = nil;
     [navController pushViewController:pushMe animated:YES];
 }
 
-- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController andQuery:(NSDictionary*)query
+- (void)navigateTo:(NSString*)route navigationController:(UINavigationController*)navController parameters:(NSDictionary *)parameters
 {
     ABViewController<Routable> * pushMe = [self match:route];
-    pushMe.query = query;
+    pushMe.parameters = parameters;
     [navController pushViewController:pushMe animated:YES];
 }
 

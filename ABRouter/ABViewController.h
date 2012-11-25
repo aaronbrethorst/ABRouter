@@ -10,7 +10,7 @@
 
 @interface ABViewController : UIViewController <Routable>
 
-@property (nonatomic, retain) NSDictionary *query;
+@property (nonatomic, retain) NSDictionary *parameters;
 @property (nonatomic, retain) NSString *apiPath;
 
 @end

@@ -38,8 +38,8 @@
 - (void)match:(NSString*)pattern to:(Class)aClass;
 - (void)display:(id)obj withNavigationController:(UINavigationController*)navController;
 - (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController;
-- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController andQuery:(NSDictionary*)query;
+- (void)navigateTo:(NSString*)route navigationController:(UINavigationController*)navController parameters:(NSDictionary*)parameters;
 - (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
-- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController withQuery:(NSDictionary*)query;
+- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController parameters:(NSDictionary*)parameters;
 - (ABViewController<Routable> *)match:(NSString*)route;
 @end

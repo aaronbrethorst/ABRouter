@@ -25,7 +25,7 @@
 
 - (void)dealloc
 {
-    self.query = nil;
+    self.parameters = nil;
     self.apiPath = nil;
     [super dealloc];
 }
