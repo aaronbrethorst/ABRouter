@@ -26,16 +26,23 @@
 @optional
 @property(nonatomic,retain) NSDictionary *parameters;
 @property(nonatomic,retain) id entity;
+
 @end
 
 @interface ABRouter : NSObject
 {
 	NSMutableArray *routePatterns;
 }
+
+@property (nonatomic, retain) UINavigationController *navigationController;
+
 + (ABRouter*)sharedRouter;
+- (void)setNavigationController:(UINavigationController *)controller;
 - (void)match:(NSString*)pattern to:(Class)aClass;
-- (void)display:(id)obj withNavigationController:(UINavigationController*)navController;
-- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController;
-- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController;
-- (UIViewController<Routable> *)match:(NSString*)route;
+- (void)match:(NSString*)pattern to:(Class)aClass modallyPresented:(UIModalTransitionStyle)transition;
+- (UIViewController *)previousController;
+
+- (void)openURL:(NSString *)route;
+- (void)openURL:(NSString *)route withParameters:(NSDictionary *)parameters;
+
 @end

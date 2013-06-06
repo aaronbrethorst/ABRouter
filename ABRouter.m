@@ -20,9 +20,15 @@
 
 #import "ABRouter.h"
 #import "SOCKit.h"
-
 #define kPatternKey @"PatternKey"
 #define kViewControllerKey @"ViewControllerKey"
+#define kModalTransitionStyle @"ModalTransitionStyle"
+
+@interface ABRouter ()
+
+- (NSDictionary *)match:(NSString*)route;
+
+@end
 
 static ABRouter *_sharedRouter = nil;
 
@@ -69,28 +75,49 @@ static ABRouter *_sharedRouter = nil;
 	[routePatterns addObject:[NSDictionary dictionaryWithObjectsAndKeys:[SOCPattern patternWithString:pattern], kPatternKey, aClass, kViewControllerKey, nil]];
 }
 
-- (void)modallyPresent:(NSString*)route from:(UIViewController*)viewController
+- (void)match:(NSString*)pattern to:(Class)aClass modallyPresented:(UIModalTransitionStyle)transition
 {
-    UIViewController<Routable> * pushMe = [self match:route];
+    if (![aClass conformsToProtocol:@protocol(Routable)])
+    {
+        [NSException raise:@"View Controller must conform to Routable protocol." format:@"%@", NSStringFromClass(aClass), nil];
+    }
+    
+	[routePatterns addObject:[NSDictionary dictionaryWithObjectsAndKeys:[SOCPattern patternWithString:pattern], kPatternKey, aClass, kViewControllerKey, [NSNumber numberWithInt:transition], kModalTransitionStyle, nil]];
+}
+
+- (void)openURL:(NSString *)route
+{
+    [self openURL:route withParameters:nil];
+}
+
+- (void)openURL:(NSString *)route withParameters:(NSDictionary *)parameters
+{
+    NSDictionary *match = [self match:route];
+    UIViewController<Routable> * pushMe = [match objectForKey:kViewControllerKey];
     pushMe.apiPath = route;
-    UINavigationController *nav = [[[UINavigationController alloc] initWithRootViewController:pushMe] autorelease];
-    [viewController presentModalViewController:nav animated:YES];
+    
+    if([match objectForKey:kModalTransitionStyle]) [self presentModalController:pushMe withTransitionStyle:[[match objectForKey:kModalTransitionStyle] integerValue] andParameters:parameters];
+    else [self pushViewController:pushMe withParameters:parameters];
 }
 
-- (void)display:(id)obj withNavigationController:(UINavigationController*)navController
+- (void)presentModalController:(UIViewController<Routable> *)controller withTransitionStyle:(UIModalTransitionStyle)transition andParameters:(NSDictionary *)parameters
 {
-    UIViewController<Routable> * pushMe = [self match:[obj path]];
-    pushMe.entity = obj;
-    [navController pushViewController:pushMe animated:YES];
+    if ([controller respondsToSelector:@selector(setParameters:)] && parameters) [controller performSelector:@selector(setParameters:) withObject:parameters];
+    controller.modalTransitionStyle = transition;
+    [self.navigationController presentModalViewController:controller animated:YES];
 }
 
-- (void)navigateTo:(NSString*)route withNavigationController:(UINavigationController*)navController
+- (void)pushViewController:(UIViewController<Routable> *)controller withParameters:(NSDictionary *)parameters
 {
-    UIViewController<Routable> * pushMe = [self match:route];
-    [navController pushViewController:pushMe animated:YES];
+    NSLog(@"push");
+    if ([controller respondsToSelector:@selector(setParameters:)] && parameters)
+    {
+        [controller performSelector:@selector(setParameters:) withObject:parameters];
+    }
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (UIViewController<Routable> *)match:(NSString*)route
+- (NSDictionary *)match:(NSString*)route
 {
     NSArray *pathInfo = [route componentsSeparatedByString:@"?"];
     route = [pathInfo objectAtIndex:0];
@@ -103,14 +130,14 @@ static ABRouter *_sharedRouter = nil;
             [potentialMatches addObject:d];
 		}
 	}
-    
+
     if (0 == [potentialMatches count])
     {
         // TODO: figure out a better punting strategy.
         // Facebook opens up a UIWebView, which is sort
         // of lame but seems like the least terrible of
         // all solutions.
-        
+
         return nil;
     }
     
@@ -119,11 +146,14 @@ static ABRouter *_sharedRouter = nil;
     SOCPattern *pattern = [match objectForKey:kPatternKey];
     Class class = [match objectForKey:kViewControllerKey];
     
+    NSLog(@"%@",class);
+
     UIViewController<Routable> * pushMe = [[[class alloc] init] autorelease];
     pushMe.apiPath = route;
     
     if ([pushMe respondsToSelector:@selector(setParameters:)])
-    {
+    { 
+
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         
         if (pathInfo.count > 1)
@@ -141,13 +171,20 @@ static ABRouter *_sharedRouter = nil;
                 }
             }
         }
-        
         [params addEntriesFromDictionary:[pattern parameterDictionaryFromSourceString:route]];
         
         [pushMe performSelector:@selector(setParameters:) withObject:params];
     }
     
-    return pushMe;
+    NSMutableDictionary *tempDic =[NSMutableDictionary dictionaryWithObjectsAndKeys:pushMe, kViewControllerKey, nil];
+    if([match objectForKey:kModalTransitionStyle]) [tempDic setObject:[match objectForKey:kModalTransitionStyle] forKey:kModalTransitionStyle];
+    return tempDic;
+}
+
+
+- (UIViewController *)previousController
+{
+	 return [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
 }
 
 @end
